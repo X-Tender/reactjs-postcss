@@ -1,0 +1,43 @@
+/*=============================
+=            fonts            =
+=============================*/
+
+/*----------  require fonts  ----------*/
+
+/*----------  font mixins  ----------*/
+
+/**
+
+	USAGE:
+	- @include font('FONT ALIAS', $fontSize, $lineHeight, $letterSpacing);
+
+ **/
+
+@mixin font($id: '', $fontSize: '', $lineHeight: '', $letterSpacing: '') {
+	@if $id == 'regular' {
+		font-family: $font-family-regular;
+	} @else if $id == 'bold' {
+		font-family: $font-family-bold;
+	} @else if $id == 'headline' {
+		font-family: $font-family-headline;
+	} @else if $id == 'regular-bold' {
+		font-family: $font-family-regular;
+		font-weight: 700;
+	}
+
+	@if $fontSize != '' {
+		font-size: $fontSize;
+	}
+
+	@if $lineHeight == 'normal' {
+		line-height: normal;
+	} @else if $lineHeight != '' {
+		line-height: $lineHeight;
+	}
+
+	@if $letterSpacing != '' {
+		letter-spacing: $letterSpacing;
+	}
+}
+
+/*=====  End of fonts  ======*/
